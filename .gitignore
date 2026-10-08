@@ -1,0 +1,7 @@
+*.safetensors
+__pycache__/
+.DS_Store
+*.safetensors
+__pycache__/
+.DS_Store
+BPEtokensier.py
