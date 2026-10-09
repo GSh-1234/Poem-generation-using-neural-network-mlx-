@@ -32,7 +32,7 @@ class Multiheadattention(nn.Module):
         K = K.swapaxes(1, 2)
         V = V.swapaxes(1, 2)
 
-        score = (Q @ (K.swapaxes(-1, -2))) // (math.sqrt(self.head_dim))
+        score = (Q @ (K.swapaxes(-1, -2))) / (math.sqrt(self.head_dim))
         indices = mx.arange(S)
         mask = indices[:, None] < indices[None, :]
         score = mx.where(mask, mx.array(-1e9), score)
